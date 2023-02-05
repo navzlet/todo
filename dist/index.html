@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-do</title>
+  <link rel="stylesheet" href="/src/styles/reset.css">
+  <link rel="stylesheet" href="/src/styles/style.css">
+</head>
+<body>
+  <section id="todo">
+
+    <h1 class="title">TODO</h1>
+    <div class="sort">
+      <div class="sortel sortel_active sort__allTodos">все задачи</div>
+      <div class="sortel sort__completedTodos">выполненные</div>
+      <div class="sortel sort__activeTodos">активные</div>
+    </div>
+
+    <div class="createTodo">
+      <input class="createTodo__input" type="text" placeholder="Создать новую задачу...">
+      <div class="createTodo_icon">
+        <img src="/src/img/akar-icons_plus.png">
+      </div>
+    </div>
+
+    <ul id="todosList">
+      <li class="todo">
+        <div class="todo__completedIcon"><img src="/src/img/completed.png"></div>
+        <div class="todo__text">text1text1text1text</div>
+        <div class="todo__deleteIcon"><img src="/src/img/ant-design_delete-outlined.png"></div>
+      </li>
+      <li class="todo">
+        <div class="todo__completedIcon"><img src="/src/img/akar-icons_circle.png"></div>
+        <div class="todo__text">text1</div>
+        <div class="todo__deleteIcon"><img src="/src/img/ant-design_delete-outlined.png"></div>
+      </li>
+    </ul>
+  </section>
+  <script src="index.bundle.js"></script>
+</body>
+</html>

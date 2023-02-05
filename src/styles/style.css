@@ -1,0 +1,87 @@
+*{
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+body {
+  background-color: #111827;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+
+#todo {
+  width: 800px;
+}
+
+.title{
+  color: aliceblue;
+  font-size: 64px;
+}
+
+.sort{
+  justify-content: flex-end;
+  display: flex;
+}
+
+.sortel{
+  color: #F8FAFC;
+  padding-left: 10px;
+}
+
+.sortel_active{
+  color:#4364BE
+}
+
+.createTodo{
+  background-color: #1F2937;
+  display: flex;
+  align-items: center;
+  height: 64px;
+  width: 800px;
+  border-radius: 8px;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+
+.createTodo__input{
+  all: unset;
+  width: 95%;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+#todosList{
+  margin-top: 24px;
+  max-width: 800px;
+}
+
+.todo{
+  background-color: #1F2937;
+  margin-top: 8px;
+  width: 100%;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+}
+
+.todo__text{
+  word-wrap: break-word;
+  word-break: break-all;
+  width: 100%;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.todo__completedIcon{
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.todo__deleteIcon{
+  margin-right: 15px;
+}

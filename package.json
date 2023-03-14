@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "simple pet-project app",
   "scripts": {
-    "build": "npx webpack-dev-server --mode production",
-    "start": "npx webpack-dev-server --mode development"
+    "build": "npx webpack --mode production",
+    "start": "npx webpack --mode development --watch"
   },
   "repository": {
     "type": "git",
@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.4.2",

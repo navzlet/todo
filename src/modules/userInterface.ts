@@ -68,10 +68,6 @@ class UserInterface {
     } else alert("Text needed");
   }
 
-  static clearStorage() {
-    LocalStorage.clearStorage();
-  }
-
   static removeTodo(todo: todo) {
     console.log(todo.index);
     LocalStorage.removeTodo(todo.index);

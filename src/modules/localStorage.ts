@@ -59,9 +59,6 @@ class LocalStorage {
       }
     }
   }
-  static clearStorage() {
-    localStorage.clear();
-  }
 }
 
 export default LocalStorage;

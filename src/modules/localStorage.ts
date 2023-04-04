@@ -1,53 +1,66 @@
 import { todo, todoList } from "../types";
 
-let todoList: todoList = []
+let todoList: todoList = [];
 
 class LocalStorage {
-  static getTodoList() {
-    if(localStorage.getItem('todoList') == null){
-      localStorage.setItem('todoList', JSON.stringify(todoList))
-    }else {
-      todoList = JSON.parse(localStorage.getItem('todoList')!);
+  static getIndex() {
+    if (localStorage.getItem("todoIndex") == null) {
+      localStorage.setItem("todoIndex", "0");
+      return "0";
+    } else {
+      let todoIndex = JSON.parse(localStorage.getItem("todoIndex")!) + 1;
+      localStorage.setItem("todoIndex", JSON.parse(todoIndex));
+      console.log(todoIndex);
+      return todoIndex;
     }
-    return todoList;
+  }
+
+  static getTodoList(sortFlag?: string) {
+    if (localStorage.getItem("todoList") == null) {
+      localStorage.setItem("todoList", JSON.stringify(todoList));
+    } else {
+      todoList = JSON.parse(localStorage.getItem("todoList")!);
+    }
+    switch (sortFlag) {
+      case "completed": {
+        return todoList.filter((todo) => todo.isCompleted === true);
+      }
+      case "active": {
+        return todoList.filter((todo) => todo.isCompleted === false);
+      }
+      default: {
+        return todoList;
+      }
+    }
   }
 
   static addTodo(todo: todo) {
     const todoList = LocalStorage.getTodoList();
     todoList.push(todo);
-    localStorage.setItem('todoList', JSON.stringify(todoList));
+    localStorage.setItem("todoList", JSON.stringify(todoList));
   }
 
   static removeTodo(todoIndex: number) {
-    const todolists = LocalStorage.getTodoList();
-    todolists.forEach((item, index) => {
+    const todolist = LocalStorage.getTodoList();
+    todolist.forEach((item, index) => {
       if (item.index === todoIndex) {
-        todolists.splice(index, 1);
-        localStorage.setItem('todolists', JSON.stringify(todolists));
+        todolist.splice(index, 1);
+        localStorage.setItem("todoList", JSON.stringify(todolist));
       }
     });
-}
+  }
 
-  static updateStatus(index: number) {
-    const todolists = LocalStorage.getTodoList();
-    for (let i = 0; i < todolists.length; i++) {
-      if (todolists[i].index === +index) {
-        todolists[i].isCompleted = !todolists[i].isCompleted;
-        localStorage.setItem('todolists', JSON.stringify(todolists));
+  static changeStatus(todoIndex: number) {
+    const todoList = LocalStorage.getTodoList();
+    for (let i = 0; i < todoList.length; i++) {
+      if (todoList[i].index === +todoIndex) {
+        todoList[i].isCompleted = !todoList[i].isCompleted;
+        localStorage.setItem("todoList", JSON.stringify(todoList));
       }
     }
   }
-  // static taskComp(index) {
-  //   const todolists = LocalStorage.getToDoLists();
-  //   for (let i = 0; i < todolists.length; i += 1) {
-  //     if (todolists[i].index === +index) {
-  //       todolists[i].isCompleted = !todolists[i].isCompleted;
-  //     }
-  //   }
-  //   localStorage.setItem('todolists', JSON.stringify(todolists));
-  // }
-  static clearStorage(){
-    localStorage.clear()
+  static clearStorage() {
+    localStorage.clear();
   }
 }
 

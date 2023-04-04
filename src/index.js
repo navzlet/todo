@@ -1,7 +1,6 @@
 import "./styles/reset.css";
 import "./styles/style.css";
 import UserInterface from "./modules/userInterface.ts";
-import LocalStorage from "./modules/localStorage";
 
 const sortAllBtn = document.querySelector(".sort__allTodos");
 const sortCompletedBtn = document.querySelector(".sort__completedTodos");

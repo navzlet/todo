@@ -39,7 +39,6 @@ class UserInterface {
       '<div class="todo__completedIcon"><img src="/src/img/completed.png"></div>';
     notCompletedIcon.innerHTML =
       '<div class="todo__completedIcon"><img src="/src/img/akar-icons_circle.png"></div>';
-
     newTodo.innerHTML = `<div class="todo__text">${todo.text}</div>
       `;
 

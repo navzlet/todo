@@ -4,7 +4,9 @@
   "description": "simple pet-project app",
   "scripts": {
     "build": "npx webpack --mode production",
-    "start": "npx webpack --mode development --watch"
+    "start": "npx webpack --mode development --watch",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -13,6 +15,7 @@
   "devDependencies": {
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.4.2",

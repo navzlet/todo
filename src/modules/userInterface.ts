@@ -34,11 +34,11 @@ class UserInterface {
     });
 
     delIcon.innerHTML =
-      '<div class="todo__deleteIcon"><img src="/src/img/ant-design_delete-outlined.png"></div>';
+      '<div class="todo__deleteIcon"><img src="https://raw.githubusercontent.com/navzlet/todo/main/src/img/ant-design_delete-outlined.png"></div>';
     completedIcon.innerHTML =
-      '<div class="todo__completedIcon"><img src="/src/img/completed.png"></div>';
+      '<div class="todo__completedIcon"><img src="https://raw.githubusercontent.com/navzlet/todo/main/src/img/completed.png"></div>';
     notCompletedIcon.innerHTML =
-      '<div class="todo__completedIcon"><img src="/src/img/akar-icons_circle.png"></div>';
+      '<div class="todo__completedIcon"><img src="https://raw.githubusercontent.com/navzlet/todo/main/src/img/akar-icons_circle.png"></div>';
     newTodo.innerHTML = `<div class="todo__text">${todo.text}</div>
       `;
 

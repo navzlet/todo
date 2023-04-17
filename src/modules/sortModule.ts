@@ -35,6 +35,5 @@ export function changeFlag(newFlag: string) {
 }
 
 export function getFlag() {
-  console.log(sortFlag);
   return sortFlag;
 }

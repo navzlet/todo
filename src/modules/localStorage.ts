@@ -10,7 +10,6 @@ class LocalStorage {
     } else {
       let todoIndex = JSON.parse(localStorage.getItem("todoIndex")!) + 1;
       localStorage.setItem("todoIndex", JSON.stringify(todoIndex));
-      console.log(todoIndex);
       return todoIndex;
     }
   }

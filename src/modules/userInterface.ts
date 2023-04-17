@@ -1,5 +1,6 @@
 import LocalStorage from "./localStorage";
 import { todo } from "../types";
+import { getFlag, changeFlag } from "./sortModule";
 
 class UserInterface {
   static getTodos(sortFlag?: string) {
@@ -63,20 +64,18 @@ class UserInterface {
         text: text.value,
       };
       LocalStorage.addTodo(todo);
-      UserInterface.getTodos();
+      UserInterface.getTodos("all");
     } else alert("Text needed");
   }
 
   static removeTodo(todo: todo) {
-    console.log(todo.index);
     LocalStorage.removeTodo(todo.index);
-    this.getTodos();
+    this.getTodos("all");
   }
 
   static changeStatus(todo: todo) {
-    console.log("completed");
     LocalStorage.changeStatus(todo.index);
-    this.getTodos();
+    this.getTodos("all");
   }
 }
 

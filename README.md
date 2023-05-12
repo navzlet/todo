@@ -1,2 +1,2 @@
 # todo
-redux, ts, webpack
+ts, webpack, localstorage
